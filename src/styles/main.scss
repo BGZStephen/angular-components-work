@@ -1,4 +1,10 @@
+@import '~bootstrap/scss/bootstrap';
+@import './players';
 
+@import '../app/modules/app/components/menu/menu.component';
+@import '../app/modules/weather/components/view/view.component';
+@import '../app/modules/weather/components/report/report.component';
+@import '../app/modules/quiz/components/view/view.component';
 
 * {
   box-sizing: border-box;

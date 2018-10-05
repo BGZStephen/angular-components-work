@@ -1,18 +1,32 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppComponent } from './components/app/app.component';
+import { WeatherModule } from '../weather/weather.module';
+import { QuizModule } from '../quiz/quiz.module';
+import { FootballModule } from '../football/football.module';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutes } from '../../app.routes';
 
+import { ApiService } from '../../services/api';
+
+import * as components from './components/components-barrel';
+
+
 @NgModule({
   declarations: [
-    AppComponent,
+    components.AppComponent,
+    components.MenuComponent,
+    components.ViewWrapper,
   ],
   imports: [
     BrowserModule,
-    AppRoutes
+    AppRoutes,
+    HttpClientModule,
+    WeatherModule,
+    FootballModule,
+    QuizModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ApiService],
+  bootstrap: [components.AppComponent]
 })
 export class AppModule { }

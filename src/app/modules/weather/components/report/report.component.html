@@ -1,0 +1,27 @@
+<div class="weather-report">
+  <h1>{{report.name}}</h1>
+  <div class="temp-container">
+    <div class="temp current-temp">
+      <p>current temperature</p>
+      <p class="temp-text">{{report.main.temp}} °C</p>
+    </div>
+    <div class="temp">
+      <p>min</p>
+      <p class="temp-text">{{report.main.temp_min}} °C</p>
+    </div>
+    <div class="temp">
+      <p>humidity</p>
+      <p class="temp-text">{{report.main.humidity}} %</p>
+    </div>
+    <div class="temp">
+      <p>max</p>
+      <p class="temp-text">{{report.main.temp_max}} °C</p>
+    </div>
+  </div>
+  <div class="image-container">
+
+  </div>
+  <p class="weather-description">
+    {{report.weather[0].description}}
+  </p>
+</div>

@@ -1,0 +1,7 @@
+<div id="weather-view" class="container">
+  <div class="row">
+    <div *ngFor="let report of weatherReports" class="col-sm-4">
+      <weather-report [report]="report"></weather-report>
+    </div>
+  </div>
+</div>

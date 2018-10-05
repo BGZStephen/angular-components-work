@@ -1,0 +1,35 @@
+.weather-report {
+  border: 2px solid white;
+  text-align: center;
+
+  h1 {
+    font-size: 28px;
+    font-weight: bolder;
+    margin-bottom: 25px;
+  }
+
+  .temp-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    .temp {
+      margin-bottom: 25px;
+      width: calc(100% / 3);
+      
+      p {
+        font-size: 14px;
+        margin-bottom: 0;
+        text-transform: uppercase;
+
+        &.temp-text {
+          font-size: 18px;
+          font-weight: bolder;
+        }
+      }
+    }
+    
+    .current-temp {
+      width: 100%;
+    }
+  }
+}

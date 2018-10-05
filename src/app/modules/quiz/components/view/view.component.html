@@ -1,0 +1,21 @@
+<div id="quiz-view">
+  <div class="container">
+    <h1>Welcome to the random science question quiz!</h1>
+    <div class="question-container">
+      <p>Question: {{activeQuestion.text}}</p>
+    </div>
+    <form>
+      <div class="form-group">
+        <label for="answer">Answer</label>
+        <input class="form-control" id="answer" name="answer" [(ngModel)]="answer">
+        <small *ngIf="!correctAnswer && submitted" class="text-danger">Incorrect guess, try again!</small>
+        <small *ngIf="correctAnswer && submitted" class="text-success">Good job!</small>
+      </div>
+      <button type="button" class="btn btn-primary btn-sm" (click)="checkAnswer()">Submit</button>
+      <button type="button" class="btn btn-info btn-sm" (click)="getNewQuestion()">New question</button>
+      <button type="button" class="btn btn-alert btn-sm" (click)="showAnswer()">Show answer</button>
+    </form>
+
+    <small *ngIf="answerVisible" class="text-primary">{{activeQuestion.answer}}</small>
+  </div>
+</div>

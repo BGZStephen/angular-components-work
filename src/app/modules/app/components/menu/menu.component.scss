@@ -1,0 +1,17 @@
+#app-menu {
+  background: $purple;
+  width: 100%;
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+
+    li {
+      color: white;
+      cursor: pointer;
+      font-weight: bolder;
+      padding: 5px 15px;
+    }
+  }
+}

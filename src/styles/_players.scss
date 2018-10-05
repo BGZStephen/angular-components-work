@@ -1,0 +1,73 @@
+.players {
+  padding-top: 5px;
+
+  .player, .coach {
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 5px;
+    padding: 8px 16px;
+    width: 240px;
+    transition: 0.3s ease all;
+  
+    .player-name {
+      font-weight: bolder;
+      line-height: 1;
+      margin-bottom: 0;
+    }
+  
+    .position {
+      line-height: 1;
+    }
+  
+    &.goalkeeper {
+      background: $green;
+      border: 2px solid darken($green, 5%);
+
+      &:hover {
+        background: darken($green, 5%);
+        border: 2px solid darken($green, 10%);
+      }
+    }
+  
+    &.defender {
+      background: $blue;
+      border: 2px solid darken($blue, 5%);
+
+      &:hover {
+        background: darken($blue, 5%);
+        border: 2px solid darken($blue, 10%);
+      }
+    }
+  
+    &.midfielder {
+      background: $yellow;
+      border: 2px solid darken($yellow, 5%);
+      color: black;
+
+      &:hover {
+        background: darken($yellow, 5%);
+        border: 2px solid darken($yellow, 10%);
+      }
+    }
+  
+    &.attacker {
+      background: $red;
+      border: 2px solid darken($red, 5%);
+
+      &:hover {
+        background: darken($red, 5%);
+        border: 2px solid darken($red, 10%);
+      }
+    }
+  }
+
+  .coach {
+    border: 2px solid black;
+    color: black;
+
+    &:hover {
+      background: darken(white, 10%);
+    }
+  }
+}
