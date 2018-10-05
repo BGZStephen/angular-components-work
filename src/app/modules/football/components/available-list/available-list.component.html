@@ -1,6 +1,7 @@
 <div id="available-list">
+  <h1>Available players</h1>
   <div class="players">
-    <div *ngFor="let player of players" class="{{player.position | lowercase}} {{player.role | lowercase}}">
+    <div (click)="selectPlayer(player)" *ngFor="let player of players" class="{{player.position | lowercase}} {{player.role | lowercase}}">
       <div class="player-name">
         {{player.name}}
       </div>

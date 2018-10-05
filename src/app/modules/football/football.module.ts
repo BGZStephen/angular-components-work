@@ -10,6 +10,7 @@ import * as components from './components/components-barrel';
   declarations: [
     components.View,
     components.AvailableList,
+    components.SelectedList,
   ],
   imports: [
     BrowserModule,

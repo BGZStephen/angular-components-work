@@ -1,0 +1,13 @@
+<div id="selected-list">
+  <h1>Selected players</h1>
+  <div class="players">
+    <div (click)="selectPlayer(player)" *ngFor="let player of players" class="{{player.position | lowercase}} {{player.role | lowercase}}">
+      <div class="player-name">
+        {{player.name}}
+      </div>
+      <div class="position">
+        <small>{{player.position ? player.position : player.role | uppercase}}</small>
+      </div>
+    </div>
+  </div>
+</div>

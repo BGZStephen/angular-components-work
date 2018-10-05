@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'available-list',
@@ -6,8 +6,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class AvailableList implements OnInit {
   @Input() players;
+  @Output() onPlayerSelect: EventEmitter<number> = new EventEmitter<number>();
 
   ngOnInit() {
-    
+
+  }
+
+  selectPlayer(player) {
+    this.onPlayerSelect.emit(player);
   }
 }

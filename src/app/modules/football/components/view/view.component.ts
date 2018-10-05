@@ -16,6 +16,13 @@ interface player {
 })
 export class View implements OnInit {
   availablePlayers: Array<player> = [];
+  selectedAttackers: number = 0;
+  selectedGoalkeepers: number = 0;
+  selectedDefenders: number = 0;
+  selectedMidfielders: number = 0;
+  selectedCoach: number = 0;
+
+  selectedPlayers: Array<player> = [];
   constructor() {
     this.availablePlayers = [
       {
@@ -342,19 +349,40 @@ export class View implements OnInit {
         "nationality": "Paraguay",
         "role": "PLAYER"
       },
-      {
-        "id": 10244,
-        "name": "Dieter Hecking",
-        "position": null,
-        "dateOfBirth": "1963-12-30T00:00:00Z",
-        "countryOfBirth": "Germany",
-        "nationality": "Germany",
-        "role": "COACH"
-      }
     ]; 
   } 
 
-  ngOnInit() {
-    console.log(this.availablePlayers)
+  ngOnInit() {}
+
+  selectAvailablePlayer(player) {
+    if (player.position === 'Goalkeeper' && this.selectedGoalkeepers >= 1) {
+      return;
+    }
+
+    if (this.selectedPlayers.length === 11) {
+      return;
+    }
+
+    if (player.position === 'Goalkeeper') this.selectedGoalkeepers += 1;
+
+    this.selectedPlayers.push(player)
+
+    for (let i = 0; i < this.availablePlayers.length; i++) {
+      if (this.availablePlayers[i].id === player.id) {
+        this.availablePlayers.splice(i, 1);
+      }
+    }
+  }
+
+  removeSelectedPlayer(player) {
+    if (player.position === 'Goalkeeper') this.selectedGoalkeepers -= 1;
+
+    this.availablePlayers.push(player)
+
+    for (let i = 0; i < this.selectedPlayers.length; i++) {
+      if (this.selectedPlayers[i].id === player.id) {
+        this.selectedPlayers.splice(i, 1);
+      }
+    }
   }
 }

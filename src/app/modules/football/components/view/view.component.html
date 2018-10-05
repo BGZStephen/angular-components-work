@@ -2,7 +2,10 @@
   <div class="container">
     <div class="row">
       <div class="col col-sm-6">
-        <available-list [players]="availablePlayers"></available-list>
+        <available-list (onPlayerSelect)="selectAvailablePlayer($event)" [players]="availablePlayers"></available-list>
+      </div>
+      <div class="col col-sm-6">
+        <selected-list (onPlayerRemove)="removeSelectedPlayer($event)" [players]="selectedPlayers"></selected-list>
       </div>
     </div>
   </div>
